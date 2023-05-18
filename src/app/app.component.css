@@ -1,0 +1,35 @@
+.extra{
+    flex: 1 1 auto;
+
+}
+
+.logo{
+    margin-inline-start: 20px;
+    font-size: 30px;
+
+}
+
+.sidenav-wrapper {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+
+.mat-sidenav-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 20px; */
+}
+
+.mat-sidenav{
+        width: 250px;
+        padding: 20px;
+
+  }
+.block{
+    margin-block: 10px;
+}

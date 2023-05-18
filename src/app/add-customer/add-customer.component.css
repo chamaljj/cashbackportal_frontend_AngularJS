@@ -1,0 +1,39 @@
+.container{
+    background-color: white;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+    border-radius: 1rem;
+    padding-inline: 2rem;
+}
+
+.but-submit{
+    padding-inline: 3rem;
+    background-color:#252525;
+    block-size: 48px;
+    inline-size: 343px;
+    inset-inline-start: 30px;
+    inset-block-start: 30px;
+    border-radius: 38px;
+    padding: 12px 104px 12px 104px;
+    color: white;
+
+}
+.but-reset{
+    padding-inline: 3rem;
+    background-color:#252525;
+    block-size: 48px; 
+    margin-block-start: 1rem;
+    inline-size: 343px;
+    inset-inline-start: 30px;
+    inset-block-start: 30px;
+    border-radius: 38px;
+    padding: 12px 104px 12px 104px;
+    color: white;
+}
+
+.h3{
+    text-align: start;
+    margin-block-end: 1rem;
+}

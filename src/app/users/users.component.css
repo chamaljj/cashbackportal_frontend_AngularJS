@@ -1,0 +1,36 @@
+.con-1{
+    background-color: white;
+    padding-inline:2rem;
+    padding-block-start: 1rem;
+    padding-block-end: 2rem;
+    margin-block-start: 0;
+    margin-block-end: 1rem;
+    margin-inline: 0rem;
+    border-radius: 1.5rem;
+    position: static;
+
+}
+
+.h2{
+    text-align:10rem;
+    padding-block-end: 1rem;
+
+}
+.overlay{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.925)
+}
+
+.content{
+    
+    inline-size: 1200px;
+    block-size: 720px;
+    padding: 100px;
+}

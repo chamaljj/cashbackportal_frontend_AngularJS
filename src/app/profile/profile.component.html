@@ -1,0 +1,54 @@
+
+  <div class="container text-center">
+   
+ 
+      <div>
+        <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['Super Admin'])" >
+          
+            <h2>You are Super Admin</h2>
+           
+        </span>
+        <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['Admin'])" >
+           
+            <h2>You are Admin</h2>
+        </span>
+        <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['User'])"  >
+            
+            <h2>You are User</h2>
+          
+        </span>
+    </div>
+</div>
+  
+<div class="container" style="padding-block-start: 5rem;"></div>
+<div class="con-1">
+  <h4>User Details</h4>
+
+  <br>
+     
+  <table class="table table-striped text-center" >
+     
+      <tr >
+        <th style="border: 2px solid gainsboro;" scope="col">User email</th>
+        <th style="border: 2px solid gainsboro;" scope="col">User Name</th>
+        <th style="border: 2px solid gainsboro;" scope="col">Role Type</th>
+      
+        </tr>
+      
+      <tbody >
+       
+          <tr  style="border: 1px solid gainsboro;" *ngFor="let User of UserArray">
+          <td  style="border: 1px solid gainsboro;" >{{User.userName}}</td>
+          <td  style="border: 1px solid gainsboro;">{{User.name}}</td>
+          <td  style="border: 1px solid gainsboro;">{{User.roleName}}</td>
+       
+          
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+  
+
+
+  

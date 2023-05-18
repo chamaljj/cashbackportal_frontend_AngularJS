@@ -1,0 +1,49 @@
+
+<div class="container text-center" >
+   
+  <tr>
+    <td><h3>All Merchants Details</h3></td>
+    <td> 
+      <div class="search-hero" > <input class="form-control" type="text" name="search"
+        [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; Search Id / Status "></div>
+    </td>
+  </tr>
+  <br>
+<table class="table table-striped text-center">
+    <thead>
+    <tr >
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Merchant Id</th>
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Cashback Id</th>
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Del_Flag</th>
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Active Status</th>
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Created Date</th>
+      <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Last Modified Date</th>
+   
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let Merchant of MerchantArray | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p}">
+        <th style="border: 1px solid gainsboro;" class="text-" scope="row">{{Merchant.mid}}</th>
+        <td style="border: 1px solid gainsboro;">{{Merchant.cashbackId}}</td>
+        <td style="border: 1px solid gainsboro;">{{Merchant.delFlag}}</td>
+        <th style="border: 1px solid gainsboro;">{{Merchant.status}}</th>
+        <td style="border: 1px solid gainsboro; padding-inline: 2rem;">{{Merchant.createdDate | date : "medium"}}</td>
+        <td style="border: 1px solid gainsboro; padding-inline: 2rem;">{{Merchant.modifiedDate | date : "medium"}}</td>
+    
+       
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+</div>
+
+
+

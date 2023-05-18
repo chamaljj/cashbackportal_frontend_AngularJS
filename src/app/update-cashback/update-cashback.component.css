@@ -1,0 +1,60 @@
+.overlay{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    padding-block-start: 2rem;
+    inline-size: 100%;
+    block-size: 100%;
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.925)
+}
+
+.content{
+    inline-size: 10px;
+    padding: 100px;
+    block-size: 100px;
+}
+
+
+.container {
+    padding-block-start: 50px;
+    padding-block-end: 10px;
+    color: #000000;
+    position: relative; 
+    margin-inline-end: 20px;
+  }
+  
+  
+.overlayer{
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.925)
+}
+
+.content-1{
+  inline-size: 700px;
+  block-size: 0px;
+  padding: 0px;
+}
+  .search-hero {
+    max-inline-size: 500px;
+    padding-block-end: 10px;
+    position: relative;
+    margin-block-end:auto;
+    margin-inline-start: 700px;
+  }
+  
+  .form-control1 {
+    box-shadow: 0 5px 5px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }

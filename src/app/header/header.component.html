@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2598ed">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">CASHBACK</a>
+    
+      <div class="collapse navbar-collapse novalidate show"  id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+          <li class="nav-item">
+            
+            <a class="nav-link active" aria-current="page" routerLink="/dashboard"
+            *ngIf="userService.roleMatch(['Admin'])"
+            >Admin Dashboard</a>
+            
+          </li>
+
+          <li class="nav-item">
+            
+            <a class="nav-link active" aria-current="page" routerLink="/user"
+            *ngIf="userService.roleMatch(['User'])"
+            >User Dashboard</a>
+          
+          </li>
+         
+        </ul>
+        <!-- <button  class="nav-link active" style="margin-inline-end: 1rem;"  type="button" class="btn btn-dark" routerLink="/register" *ngIf="userService.roleMatch(['Admin'])">Create User</button> -->
+        <button  style="margin-inline-end: 1rem;" type="button" class="btn btn-dark" routerLink="/login" *ngIf !="userService.roleMatch(['Admin']) || (userService.roleMatch(['User']))" >Login</button>
+        <button  class="nav-link active" type="button" class="btn btn-dark" (click)="logout()" *ngIf="userService.roleMatch(['Admin']) || (userService.roleMatch(['User']))">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+

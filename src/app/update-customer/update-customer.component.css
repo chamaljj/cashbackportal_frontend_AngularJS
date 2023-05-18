@@ -1,0 +1,47 @@
+.overlay{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.925)
+}
+
+
+.content{
+  inline-size: 1200px;
+  block-size: 720px;
+  padding: 100px;
+}
+
+.overlayer{
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 150%;
+  block-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.925)
+}
+
+
+
+.content-1{
+  inline-size: 1000px;
+  block-size: 870px;
+  padding: 100px;
+}
+
+  
+  .search-hero {
+    max-inline-size: 500px;
+    padding-block-end: 10px;
+    position: relative;
+    margin-block-end:auto;
+    margin-inline-start: 200px;
+  }

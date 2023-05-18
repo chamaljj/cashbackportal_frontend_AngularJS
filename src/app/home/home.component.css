@@ -1,0 +1,23 @@
+
+
+.container {
+    padding-block-start: 20px;
+    padding-block-end: 10px;
+    color: #000000;
+    position: static; 
+  }
+  
+  .search-hero {
+    max-inline-size: 800px;
+    padding-block-end: 10px;
+    position: relative;
+    margin-block-end:auto;
+    margin-inline-start: 400px;
+  }
+  
+  .form-control {
+    box-shadow: 0 5px 5px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }

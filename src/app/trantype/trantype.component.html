@@ -1,0 +1,169 @@
+
+<div class="column">
+
+<div class="container">
+            
+    <h3 style="text-align: start;">Add Transaction Type</h3>
+    <br>
+    <div style="background-color: white;">
+        <div class="row" style="border-radius: 4rem;">
+        <div class="col-md-3"></div>
+        <div class="col-md-12" style="border-radius: 4rem;" >
+            <div class=" m-6 ">
+                <div class="card-body" >
+                    <form  name ="customerForm"  #f="ngForm" (ngSubmit)="f.form.valid && submit()" novalidate >
+                        <div class="form-row" >
+                     
+                            <div class="col-md-6">
+                                <label for="tranTypeId">Transaction Id<span style="color: red;">*</span> : </label>
+                                <input type="number" [(ngModel)]="tranTypeId" class="form-control" id="tranTypeId" required
+                            name="tTypeId"
+                            #tTypeId="ngModel"
+                            [ngClass]="{'is-invalid':f.submitted && tTypeId.invalid  }" >  
+                            <div class="invalid-feedback">
+                                <div>TranType Id is required</div>
+                            </div>
+                            </div>
+                     
+                            <div class="col-md-6">
+                                <label for="tranType">Transaction Type<span style="color: red;">*</span> : </label>
+                                <input type="text" [(ngModel)]="typeName"  class="form-control" id="tranType" required
+                                name="tType"
+                                #tType="ngModel"
+                                [ngClass]="{'is-invalid':f.submitted && tType.invalid  }" >  
+                                <div class="invalid-feedback">
+                                    <div>TranType is required</div>
+                                </div>
+                            </div>
+                        </div>
+                     <br>
+                      
+                         
+                    
+                     
+                        <div class="text-center">
+                            <button class="but-submit" type='submit'> Save </button>        
+                      
+                            <br>
+                            <button class="but-reset" type='reset'> Reset </button>        
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+   </div>
+   </div>
+  </div>
+
+
+  <div class="column">
+   <div class="container text-center" >
+   
+    <tr>
+      <td><h3>All TrantType Details</h3></td>
+      <td> 
+        <div class="search-hero" > <input class="form-control" type="text" name="search"
+          [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; Search Id / Type Name "></div>
+      </td>
+    </tr>
+    <br>
+  <table class="table table-striped text-center">
+      <thead>
+      <tr >
+        <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Tran Type Id</th>
+        <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Transaction Type</th>
+        <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Update TranType</th>
+        <th style="border: 2px solid gainsboro; padding-inline: 1rem;" scope="col">Delete TranType</th>
+     
+  
+        </tr>
+      </thead>
+      <tbody>
+  
+        <tr *ngFor="let TranType of TranTypeArray | filter:searchText  ">
+          <th style="border: 1px solid gainsboro;" class="text-" scope="row">{{TranType.tranTypeId}}</th>
+          <td style="border: 1px solid gainsboro;">{{TranType.typeName}}</td>
+          <td *ngIf="userService.roleMatch(['Super Admin'])">
+            <button type="button" class="btn btn-dark" style="margin-inline-end: 0.5rem;" (click)="setUpdate(TranType)" >Edit</button>
+          </td>
+          <td style="border: 1px solid gainsboro;" *ngIf="userService.roleMatch(['Super Admin'])">
+              <button type="button" class="btn btn-dark" style="margin-inline-end: 0.5rem;" (click)="setDelete(TranType)">Delete</button>
+          </td>
+      
+        </tr>
+      </tbody>
+    </table>
+  
+    <br>
+  
+   
+  
+  </div>
+  
+  </div>
+  
+  
+  <div class="overlay" *ngIf="show" (click)="closeoverlay($event)">
+    <div class="content-1" style="margin-inline: 25rem;">
+    
+       <div  style="background-color: white; padding-block-start: 1rem;padding-block-end: 1rem;margin-block-start: 0.5rem;
+            margin-block-end: 2rem;padding-inline: 2rem;border-radius:2rem;" >
+        <div class="row" > 
+            <div class="close()" (click)="closepopup()" style="color: red;">
+                &times;
+            </div>  
+            <div class="col-md-12">  
+               
+                <br>
+                    <form  name ="customerForm"  #f="ngForm" (ngSubmit)="f.form.valid && submit()" novalidate >
+                        <div class="form-row" >
+                     
+                            <div class="col-md-6">
+                                <label for="tranTypeId">Transaction Id<span style="color: red;">*</span> : </label>
+                                <input type="number" [(ngModel)]="tranTypeId" class="form-control" id="tranTypeId" required
+                            name="tTypeId"
+                            #tTypeId="ngModel"
+                            [ngClass]="{'is-invalid':f.submitted && tTypeId.invalid  }" >  
+                            <div class="invalid-feedback">
+                                <div>TranType Id is required</div>
+                            </div>
+                            </div>
+                     
+                            <div class="col-md-6">
+                                <label for="tranType">Transaction Type<span style="color: red;">*</span> : </label>
+                                <input type="text" [(ngModel)]="typeName"  class="form-control" id="tranType" required
+                                name="tType"
+                                #tType="ngModel"
+                                [ngClass]="{'is-invalid':f.submitted && tType.invalid  }" >  
+                                <div class="invalid-feedback">
+                                    <div>TranType is required</div>
+                                </div>
+                            </div>
+                        </div>
+                     <br>
+                      
+                         
+                    
+                     
+                        <div class="text-center" style="margin: 2rem;">
+                            <button class="but-submit" type='submit'> Save </button>        
+                      
+                            <br>
+                            <button class="but-reset" type='reset'> Reset </button>        
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+   </div>
+   
+  
+    
+                         
+          

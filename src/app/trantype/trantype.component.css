@@ -1,0 +1,77 @@
+.container{
+    background-color: white;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+    border-radius: 1rem;
+    padding-inline: 2rem;
+}
+
+
+.but-submit{
+    padding-inline: 3rem;
+    background-color:#252525;
+    block-size: 48px;
+    inline-size: 343px;
+    inset-inline-start: 30px;
+    inset-block-start: 30px;
+    border-radius: 38px;
+    padding: 12px 104px 12px 104px;
+    color: white;
+
+}
+.but-reset{
+    padding-inline: 3rem;
+    background-color:#252525;
+    block-size: 48px; 
+    margin-block-start: 1rem;
+    inline-size: 343px;
+    inset-inline-start: 30px;
+    inset-block-start: 30px;
+    border-radius: 38px;
+    padding: 12px 104px 12px 104px;
+    color: white;
+}
+
+.h3{
+    text-align: start;
+    margin-block-end: 1rem;
+}
+
+.column {
+    display: inline-block;
+    inline-size: 49%;
+    vertical-align: top;
+    margin-inline-end: 1%;
+  }
+  
+  .column:last-child {
+    margin-inline-end: 0;
+  }
+
+  .search-hero {
+    max-inline-size: 300px;
+    padding-block-end: 10px;
+    position: relative;
+    margin-block-end:auto;
+    margin-inline-start: 50px;
+  }
+  .overlay{
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.925)
+}
+
+.content{
+    
+    inline-size: 1200px;
+    block-size: 720px;
+    padding: 100px;
+}

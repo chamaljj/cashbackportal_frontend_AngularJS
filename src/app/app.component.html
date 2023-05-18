@@ -1,0 +1,115 @@
+<!-- <app-header></app-header> -->
+<!-- <router-outlet></router-outlet>  -->
+
+<mat-toolbar color="primary">
+    <span mat-icon-button (click)="nav.toggle()" *ngIf="userService.roleMatch(['Super Admin']) || userService.roleMatch(['Admin']) || (userService.roleMatch(['User']))"><mat-icon>menu</mat-icon></span>
+    <div class="logo" [routerLink]="['home']"><span>CASHBACK</span></div>
+    <div class="extra"></div>
+    <div>
+        <span style="font-weight: bold;margin-inline-end: 1rem;" class="block" *ngIf="userService.roleMatch(['Super Admin'])" >
+            <mat-icon>home</mat-icon>
+            <span>Super Admin</span>
+           
+        </span>
+        <span style="font-weight: bold;margin-inline-end: 1rem;" class="block" *ngIf="userService.roleMatch(['Admin'])" >
+            <mat-icon>home</mat-icon>
+            <span>Admin</span>
+        </span>
+        <span style="font-weight: bold;margin-inline-end: 2rem;" class="block" *ngIf="userService.roleMatch(['User'])"  >
+            <mat-icon>home</mat-icon>
+            <span>User</span>
+        </span>
+        <span style="font-weight: bold;margin-inline-end: 1rem;" class="block" >
+           
+          
+        </span>
+    </div>
+<div>
+    <button  style="margin-inline: 1rem;background-color: rgb(100, 99, 97);" class="nav-link active" type="button" class="btn btn-dark" routerLink="/register"  *ngIf="userService.roleMatch(['Super Admin'])">Create User</button>
+    <button  style="margin-inline: 1rem;background-color: rgb(100, 99, 97);" type="button" class="btn btn-dark"  routerLink="/login" *ngIf !="userService.roleMatch(['Super Admin']) || userService.roleMatch(['Admin']) || (userService.roleMatch(['User']))" >Login</button>
+    <button   class="nav-link active" type="button" class="btn btn-dark" style="background-color: rgb(100, 99, 97);" (click)="logout()" *ngIf="userService.roleMatch(['Super Admin']) ||userService.roleMatch(['Admin']) || (userService.roleMatch(['User']))">Logout</button>
+</div>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="sidenav-wrapper">
+    <mat-sidenav #nav mode="over">
+        <!-- <a  color="primary"> -->
+            <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['Super Admin'])">
+                <mat-icon>home</mat-icon>
+                <span>Super Admin Dashboard</span>
+            </span>
+            <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['Admin'])">
+                <mat-icon>home</mat-icon>
+                <span>Admin Dashboard</span>
+            </span>
+            <span style="font-weight: bold;" class="block" *ngIf="userService.roleMatch(['User'])">
+                <mat-icon>home</mat-icon>
+                <span>User Dashboard</span>
+            </span>
+            <button [routerLink]="['add']" class="block" mat-button>
+                <mat-icon>add</mat-icon>
+                <span>Add Cashback</span>
+            </button>
+   
+            <button [routerLink]="['home']"  class="block" mat-button>
+                <mat-icon>reorder</mat-icon>
+                <span>View Cashback</span>
+            </button>
+   
+            <button  [routerLink]="['update']"  *ngIf="userService.roleMatch(['Super Admin'])||userService.roleMatch(['Admin'])" class="block" mat-button>
+                <mat-icon>update</mat-icon>
+                <span>Update Cashback</span>
+            </button>
+    
+            <button [routerLink]="['addCustomer']" class="block" mat-button>
+                <mat-icon>add</mat-icon>
+                <span>Add Customer</span>
+            </button>
+    
+            <button [routerLink]="['viewCustomer']"  class="block" mat-button>
+                <mat-icon>reorder</mat-icon>
+                <span>View Customer</span>
+            </button>
+
+            <button [routerLink]="['updateCustomer']" *ngIf="userService.roleMatch(['Super Admin']) || userService.roleMatch(['Admin'])" class="block" mat-button>
+                <mat-icon>update</mat-icon>
+                <span>Update Customer</span>
+            </button>
+
+            <button [routerLink]="['addMerchant']" class="block" mat-button>
+                <mat-icon>add</mat-icon>
+                <span>Add Merchant</span>
+            </button>
+    
+            <button [routerLink]="['viewMerchant']" class="block" mat-button>
+                <mat-icon>reorder</mat-icon>
+                <span>View Merchant</span>
+            </button>
+
+            <button [routerLink]="['updateMerchant']"  *ngIf="userService.roleMatch(['Super Admin']) || userService.roleMatch(['Admin'])" class="block" mat-button>
+                <mat-icon>update</mat-icon>
+                <span>Update Merchant</span>
+            </button>
+
+            <button [routerLink]="['trantype']"  *ngIf="userService.roleMatch(['Super Admin'])" class="block" mat-button>
+                <mat-icon>add</mat-icon>
+                <span>Transcation Type</span>
+            </button>
+            <button [routerLink]="['users']"  *ngIf="userService.roleMatch(['Super Admin'])" class="block" mat-button>
+                <mat-icon>reorder</mat-icon>
+                <span> All Users List</span>
+            </button>
+            <button  [routerLink]="['profile']"  mat-button>
+                <mat-icon>person</mat-icon>
+                <span>Profile </span>
+            </button>
+ 
+       
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet> 
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  
